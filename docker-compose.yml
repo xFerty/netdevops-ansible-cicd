@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  switch1:
+    image: lscr.io/linuxserver/openssh-server:latest
+    container_name: dev_1
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PASSWORD_ACCESS=true
+      - USER_NAME=admin
+      - USER_PASSWORD=examplepassword
+      - TZ=Europe/Warsaw
+   ports:
+      - "2221:22"
+   restart: unless-stopped
+
+  router1:
+    image: lscr.io/linuxserver/openssh-server:latest
+    container_name: dev_2
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PASSWORD_ACCESS=true
+      - USER_NAME=admin
+      - USER_PASSWORD=examplepassword
+      - TZ=Europe/Warsaw
+    ports:
+      - "2222:22"
+    restart: unless-stopped
+
+  server1:
+    image: lscr.io/linuxserver/openssh-server:latest
+    container_name: dev_3
+    environemnt:
+      - PUID=1000
+      - PGID=1000
+      - PASSWORD_ACCESS=true
+      - USER_NAME=admin
+      - USER_PASSWORD=examplepassword
+      - TZ=Europe/Warsaw

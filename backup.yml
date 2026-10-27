@@ -1,0 +1,14 @@
+- name: Automatic container backups
+  hosts: all
+  gather_facts: no
+
+  tasts:
+    - name: Download hostname file from the server
+      ansible.builtin.slurp:
+        src: /etc/hostname
+      register: config_file
+
+    - name: Save downloaded config to local file
+      ansibl.builtin.copy:
+        content: "{{ config_file['content'] | b64decode }}"
+        dest: "./backup_{{ inventory_hostname }}.txt"
