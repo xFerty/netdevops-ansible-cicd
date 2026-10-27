@@ -39,3 +39,6 @@ services:
       - USER_NAME=admin
       - USER_PASSWORD=examplepassword
       - TZ=Europe/Warsaw
+    ports:
+     - "2223:22"
+    restart: unless-stopped
