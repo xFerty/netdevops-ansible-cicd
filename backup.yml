@@ -2,7 +2,7 @@
   hosts: all
   gather_facts: no
 
-  tasts:
+  tasks:
     - name: Download hostname file from the server
       ansible.builtin.slurp:
         src: /etc/hostname
