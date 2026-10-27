@@ -25,4 +25,4 @@ jobs:
 
       - name: Check Ansible Playbook syntax
         run: |
-          ansible-playbook -i inventory.yml backup.yml --syntax check
+          ansible-playbook -i inventory.yml backup.yml --syntax-check
