@@ -9,6 +9,6 @@
       register: config_file
 
     - name: Save downloaded config to local file
-      ansibl.builtin.copy:
+      ansible.builtin.copy:
         content: "{{ config_file['content'] | b64decode }}"
         dest: "./backup_{{ inventory_hostname }}.txt"
