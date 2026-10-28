@@ -28,8 +28,4 @@ jobs:
         run: ansible-playbook -i inventory/production.yml playbooks/backup.yml --syntax-check
 
       - name: Run Ansible-lint
-        run: ansible-lint playbooks/backup.yml
-
-      - name: Check Ansible Playbook syntax
-        run: |
-          ansible-playbook -i inventory.yml backup.yml --syntax-check
+        run: ansible-lint playbooks/*.yml
