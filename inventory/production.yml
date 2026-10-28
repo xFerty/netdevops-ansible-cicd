@@ -1,0 +1,11 @@
+all:
+  children:
+    servers:
+      hosts:
+        server1:
+    switches:
+      hosts:
+        switch1:
+    routers:
+      hosts:
+        router1:
